@@ -1,0 +1,33 @@
+{
+  "name": "config_generator",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://AppGratis.github.io",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-plugin-lodash": "^3.2.10",
+    "babel-preset-es2015": "^6.18.0",
+    "react-autocomplete-cli": "0.0.3",
+    "react-scripts": "0.7.0"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "lodash": "^4.17.2",
+    "moment": "^2.17.1",
+    "react": "^15.4.0",
+    "react-bootstrap": "^0.30.6",
+    "react-datetime": "^2.8.4",
+    "react-dom": "^15.4.0",
+    "react-router": "^3.0.0",
+    "uuid": "^3.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  }
+}
