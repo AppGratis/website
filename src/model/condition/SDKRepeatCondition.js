@@ -29,7 +29,9 @@ class SDKRepeatCondition extends SDKBaseCondition {
 
   copyFromPlainObject(from) {
     super.copyFromPlainObject(from);
-    //TODO
+    this.startHour = from["start_hour"] || 0;
+    this.endHour = from["end_hour"] || 24;
+    this.frequency = from["every"] || this.frequency;
   }
 
   getPlainObjectRepresentation() {

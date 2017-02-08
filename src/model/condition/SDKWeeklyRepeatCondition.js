@@ -12,6 +12,11 @@ class SDKWeeklyRepeatCondition extends SDKRepeatCondition {
     }
   }
 
+  copyFromPlainObject(from) {
+    super.copyFromPlainObject(from);
+    this.weekday = from.weekday;
+  }
+
   getPlainObjectRepresentation() {
     let superObject = super.getPlainObjectRepresentation();
     return Object.assign({
