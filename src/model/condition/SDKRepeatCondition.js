@@ -36,10 +36,10 @@ class SDKRepeatCondition extends SDKBaseCondition {
 
   getPlainObjectRepresentation() {
     return Object.assign({
-      "start_hour": this.startHour,
-      "end_hour": this.endHour,
       "repeat": {
-        "every": this.frequency
+        "every": this.frequency,
+        "start_hour": this.startHour,
+        "end_hour": this.endHour
       }
     }, super.getPlainObjectRepresentation());
   }

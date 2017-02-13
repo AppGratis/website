@@ -5,7 +5,7 @@ class SDKWeeklyRepeatCondition extends SDKRepeatCondition {
     super(from);
 
     this.frequency = SDKRepeatCondition.Frequency.Weekly;
-    this.weekday = SDKWeeklyRepeatCondition.Day;
+    this.weekday = SDKWeeklyRepeatCondition.Day.Sunday;
 
     if (from) {
       this.weekday = from.weekday || this.weekday;
