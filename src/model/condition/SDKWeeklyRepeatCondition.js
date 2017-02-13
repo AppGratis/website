@@ -20,7 +20,7 @@ class SDKWeeklyRepeatCondition extends SDKRepeatCondition {
   getPlainObjectRepresentation() {
     let superObject = super.getPlainObjectRepresentation();
     return Object.assign({
-      "repeat": Object.assign({ "weekday": this.weekday }, superObject.repeat)
+      "repeat": Object.assign(superObject.repeat, { "weekday": this.weekday })
     }, superObject);
   }
 }
