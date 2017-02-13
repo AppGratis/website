@@ -31,6 +31,7 @@ class OfferEditor extends Component {
     this.updateOffer = this.updateOffer.bind(this);
     this.updateCustomData = this.updateCustomData.bind(this);
     this.isCustomDataValid = this.isCustomDataValid.bind(this);
+    this.parseCustomData = this.parseCustomData.bind(this);
     this.updateFeatures = this.updateFeatures.bind(this);
     this.updateResources = this.updateResources.bind(this);
   }
@@ -98,7 +99,7 @@ class OfferEditor extends Component {
   updateCustomData(value) {
     this.setState({
       customData: value,
-      offer: Object.assign(this.state.offer, { customData: this.parseCustomData() })
+      offer: Object.assign(this.state.offer, { data: this.parseCustomData(value) })
     });
   }
 
@@ -110,9 +111,12 @@ class OfferEditor extends Component {
     this.setState({ offer: Object.assign(this.state.offer, { resources: resources }) });
   }
 
-  parseCustomData() {
+  parseCustomData(data) {
+    if (data === undefined) {
+      data = this.state.customData;
+    }
     try {
-      const json = JSON.parse(this.state.customData);
+      const json = JSON.parse(data);
       if (json !== null && json !== undefined && !Array.isArray(json)) {
         return json;
       }
