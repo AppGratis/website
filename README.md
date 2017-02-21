@@ -1,14 +1,14 @@
-#AppGratis Opensource Website source
+#AppGratis Unlock Library (Website source code)
 
-This project is the sourcecode used to build https://appgratis.github.io 
+This project is the source code used to build https://appgratis.github.io.
 
 It has two parts:
- - A home page, with a list of open-sourced projects and link to their github pages
- - The configuration generator for the Unlock library. It allows you to graphically create your unlock offers and generate the JSON expected by the libraries
+ - A home page, with a list of open-sourced projects and link to their GitHub pages.
+ - The configuration generator for the AppGratis Unlock library. It allows you to create your unlock offers from a web interface and generate the JSON expected by the mobile libraries.
 
 ## Contributing
 
-This is a standard react app, created with `react-create-app`.  
+This is a standard React app, created with `react-create-app`.  
 If you are familiar with any React project, you shouldn't have any issue with this codebase.
 
 ## Build 
