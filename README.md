@@ -1,6 +1,6 @@
 #AppGratis Opensource Website source
 
-This project is the sourcecode used to build https://AppGratis.github.io 
+This project is the sourcecode used to build https://appgratis.github.io 
 
 It has two parts:
  - A home page, with a list of open-sourced projects and link to their github pages
@@ -16,4 +16,4 @@ Just like any react-create-app project, just run `npm start` to work locally on 
 
 Once you want to release it, run `npm run build`: the optimized production build will be in the `build` folder.
 
-If you want to upload the website to another URL than https://AppGratis.github.io , please change `homepage` in `package.json`
+If you want to upload the website to another URL than https://appgratis.github.io , please change `homepage` in `package.json`
