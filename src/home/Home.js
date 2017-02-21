@@ -11,7 +11,7 @@ class Home extends Component {
           <h1>AppGratis Unlock Library</h1>
           <p>.</p>
           <ButtonToolbar id="header-buttons">
-            <Button bsStyle="primary" href="https://github.com/AppGratis/website/wiki/AppGratis-Unlock---Getting-Started">Get started</Button>
+            <Button bsStyle="primary" href="https://github.com/AppGratis/website/wiki/AppGratis-Unlock-:-Getting-Started">Get started</Button>
             <Button bsStyle="primary" href="https://github.com/AppGratis/unlock-ios">Github (iOS)</Button>
             <Button bsStyle="primary" href="https://github.com/AppGratis/unlock-android">Github (Android)</Button>
           </ButtonToolbar>
