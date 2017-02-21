@@ -22,3 +22,13 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.form-control:hover, .form-control:focus{
+  box-shadow: none!important;
+}
+.table .form-group{
+  margin-bottom: 0;
+}
+h4{
+  color: #00A1E0!important;
+}

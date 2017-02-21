@@ -233,7 +233,7 @@ class OfferEditor extends Component {
     return (
 
       <div>
-        <h4>Offer description</h4>
+        <h4 style={{marginTop:'25px', marginBottom: '15px'}}>Offer description</h4>
         Token
         <FormControl type="text" value={offer.token} readOnly ></FormControl><br />
         <FormGroup validationState={offer.name.length > 0 ? null : "error"}>
@@ -279,7 +279,7 @@ class OfferEditor extends Component {
       <div>
 
         <h4>Redeem condition</h4>
-        <Table>
+        <Table style={{marginBottom:0}}>
           <tbody>
             <tr>
               <td style={{ borderTop: "none" }}>
