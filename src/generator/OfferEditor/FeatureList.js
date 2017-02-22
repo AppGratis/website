@@ -200,7 +200,7 @@ class FeatureListNewItem extends Component {
             <InputGroup>
               <InputGroup.Addon>
                 <OverlayTrigger overlay={unlimitedLifetimeTooltip}>
-                  <Checkbox checked={!this.state.unlimitedLifetime} onChange={(e) => this.setState({ unlimitedLifetime: !e.target.checked })} />
+                  <Checkbox style={{ margin: "0", paddingBottom: "0", minHeight: "0", paddingLeft: "25px" }} checked={!this.state.unlimitedLifetime} onChange={(e) => this.setState({ unlimitedLifetime: !e.target.checked })} />
                 </OverlayTrigger>
               </InputGroup.Addon>
               <FormControl
