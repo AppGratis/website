@@ -233,14 +233,19 @@ class OfferEditor extends Component {
     return (
 
       <div>
-        <h4 style={{marginTop:'25px', marginBottom: '15px'}}>Offer description</h4>
-        Token
-        <FormControl type="text" value={offer.token} readOnly ></FormControl><br />
+        <h4 style={{ marginTop: '25px', marginBottom: '15px' }}>Offer description</h4>
+        <FormGroup>
+          <ControlLabel>Token</ControlLabel>
+          <FormControl type="text" value={offer.token} readOnly ></FormControl>
+        </FormGroup>
         <FormGroup validationState={offer.name.length > 0 ? null : "error"}>
           <ControlLabel>Name</ControlLabel>
-          <FormControl type="text" value={offer.name} onChange={(e) => this.updateOffer({ name: e.target.value })} ></FormControl><br />
+          <FormControl type="text" value={offer.name} onChange={(e) => this.updateOffer({ name: e.target.value })} ></FormControl>
         </FormGroup>
-        Unlock Message (optional)<FormControl type="text" value={offer.unlockMessage == null ? "" : offer.unlockMessage} onChange={(e) => this.updateOffer({ unlockMessage: e.target.value })} ></FormControl><br />
+        <FormGroup>
+          <ControlLabel>Unlock Message (optional)</ControlLabel>
+          <FormControl type="text" value={offer.unlockMessage == null ? "" : offer.unlockMessage} onChange={(e) => this.updateOffer({ unlockMessage: e.target.value })} ></FormControl>
+        </FormGroup>
         <FormGroup validationState={this.isCustomDataValid() ? null : "error"}>
           <ControlLabel>Custom Data</ControlLabel>
           <FormControl componentClass="textarea" value={this.state.customData} onChange={(e) => this.updateCustomData(e.target.value)} />
@@ -279,10 +284,10 @@ class OfferEditor extends Component {
       <div>
 
         <h4>Redeem condition</h4>
-        <Table style={{marginBottom:0}}>
+        <Table style={{ marginBottom: 0 }}>
           <tbody>
             <tr>
-              <td style={{ borderTop: "none" }}>
+              <td style={{ borderTop: "none", paddingLeft: "0px" }}>
                 <FormGroup validationState={startDateValidationError ? "error" : null}>
                   <ControlLabel>Start date</ControlLabel>
                   <Datetime
@@ -294,7 +299,7 @@ class OfferEditor extends Component {
                   }
                 </FormGroup>
               </td>
-              <td style={{ borderTop: "none" }}>
+              <td style={{ borderTop: "none", paddingRight: "0px" }}>
                 <FormGroup validationState={endDateValidationError ? "error" : null}>
                   <ControlLabel>End date</ControlLabel>
                   <Datetime
@@ -313,9 +318,9 @@ class OfferEditor extends Component {
         <FormGroup>
           <Checkbox value={condition.newUsersOnly} onChange={(e) => this.updateOfferCondition({ newUsersOnly: e.target.checked })}>New users only</Checkbox>
         </FormGroup>
-        <FormGroup>
+        <FormGroup style={{ marginBottom: "0px", marginTop: "20px" }}>
           <ControlLabel>Repeats:</ControlLabel>
-          <FormControl componentClass="select" value={repeatFrequency} onChange={(e) => this.updateOfferRepeatFrequency(e.target.value)}>
+          <FormControl style={{ width: "420px" }} componentClass="select" value={repeatFrequency} onChange={(e) => this.updateOfferRepeatFrequency(e.target.value)}>
             <option value={OfferEditor.Frequency.None}>Doesn't repeat (always redeemable until end date)</option>
             <option value={OfferEditor.Frequency.Daily}>Every day</option>
             <option value={OfferEditor.Frequency.Weekly}>Every week</option>
@@ -331,7 +336,7 @@ class OfferEditor extends Component {
                   {
                     repeatFrequency === OfferEditor.Frequency.Weekly &&
                     <FormGroup>
-                      <FormControl componentClass="select" value={condition.weekday} onChange={(e) => this.updateOfferCondition({ weekday: e.target.value })}>
+                      <FormControl style={{ width: "412px" }} componentClass="select" value={condition.weekday} onChange={(e) => this.updateOfferCondition({ weekday: e.target.value })}>
                         {
                           Object.keys(WeeklyRepeatCondition.Day).map((d) =>
                             <option key={d} value={WeeklyRepeatCondition.Day[d]}>On {d.toLowerCase()}s</option>
@@ -347,12 +352,12 @@ class OfferEditor extends Component {
                 </td>
               </tr>
               <tr>
-                <td style={{ borderTop: "none" }}>
+                <td style={{ borderTop: "none", width: "1px" }}>
                   <FormGroup validationState={startHourValidationError ? "error" : null}>
                     <ControlLabel>From</ControlLabel>
                     <InputGroup>
                       <FormControl
-                        style={{ width: "2em" }}
+                        style={{ width: "4em" }}
                         value={isNaN(condition.startHour) ? "" : condition.startHour}
                         onChange={(e) => this.updateOfferCondition({ startHour: parseInt(e.target.value, 10) })} />
                       <InputGroup.Addon>:00</InputGroup.Addon>
@@ -363,12 +368,12 @@ class OfferEditor extends Component {
                     }
                   </FormGroup>
                 </td>
-                <td style={{ borderTop: "none" }}>
+                <td style={{ borderTop: "none", width: "1px" }}>
                   <FormGroup validationState={endHourValidationError ? "error" : null}>
                     <ControlLabel>To</ControlLabel>
                     <InputGroup>
                       <FormControl
-                        style={{ width: "2em" }}
+                        style={{ width: "4em" }}
                         value={isNaN(condition.endHour) ? "" : condition.endHour}
                         onChange={(e) => this.updateOfferCondition({ endHour: parseInt(e.target.value, 10) })} />
                       <InputGroup.Addon>:00</InputGroup.Addon>
